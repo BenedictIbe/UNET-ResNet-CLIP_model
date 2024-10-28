@@ -1,48 +1,93 @@
 # UNET-ResNet-CLIP_model
 
-UNet-ResNet-CLIP for Lung X-Ray Classification and Segmentation
-Overview
-This project combines the power of UNet, ResNet, and CLIP models to classify and segment lung X-ray images, focusing on distinguishing between COVID-19, Non-COVID, and Normal cases. This research addresses the challenge of accurate detection and classification of lung conditions using X-ray imagery, aiming to enhance diagnostic accuracy and efficiency in medical imaging analysis.
+Lung X-Ray Classification and Segmentation with UNet, ResNet, and CLIP
 
+Table of Contents
+Overview
 Objectives
-Classification: To accurately categorize X-ray images as COVID-19, Non-COVID, or Normal.
-Segmentation: To identify and localize infected areas in COVID-19 X-ray images, using advanced segmentation techniques.
-Model Comparison: To evaluate performance across various model architectures, including UNet for segmentation and ResNet & CLIP for feature extraction and classification.
 Methodology
 Data Preparation
-Dataset: The COVID-QU-Ex dataset, consisting of original images, lung masks, and infection masks, is utilized.
-Preprocessing: Images are resized, normalized, and augmented to enhance model generalization.
-DataFrame Structure: Processed images are organized into a dataframe with paths to images, infection masks, and class labels.
-Models
-UNet: For segmenting infected lung regions, UNet was fine-tuned to learn the distinct infection patterns in COVID-19 X-rays.
-ResNet: ResNet was leveraged for its feature extraction capabilities, providing robust feature embeddings for classification.
-CLIP: Fine-tuned to classify images, CLIP assists in associating visual features with textual labels (COVID-19, Non-COVID, Normal).
+Model Architectures
 Training Process
-Segmentation Model Training: UNet was trained on COVID-19 images with infection masks, achieving a segmentation IoU of up to 0.8.
-Classification Model Training: ResNet and CLIP were fine-tuned to classify the segmented images, taking advantage of pre-trained weights and transfer learning techniques to adapt to X-ray imaging data.
 Evaluation Metrics
-Accuracy, Precision, Recall: Used to evaluate the performance across classification tasks.
-IoU (Intersection over Union): For segmentation tasks, measuring how well the segmented area overlaps with the ground truth infection mask.
 Results and Insights
-Segmentation: UNet achieved high accuracy in segmenting infected areas on COVID-19 X-rays, particularly when combined with infection masks.
-Classification: ResNet and CLIP provided promising results in distinguishing COVID-19 from Non-COVID and Normal cases, with ResNet outperforming in certain scenarios due to its specificity in feature extraction.
-Comparison: Evaluating UNet, ResNet, and CLIP highlighted the strengths of each model for specific tasks (segmentation vs. classification), suggesting potential for hybrid approaches in medical imaging applications.
 Future Work
-Integration of More Classes: Further exploration of other respiratory infections to expand the classification capability.
-Model Optimization: Streamlining models for faster, real-time diagnostic support.
-Weakly Supervised Learning: Utilizing bounding box data without full segmentation labels to improve model learning efficiency.
-How to Use
-Clone the Repository:
-
-bash
-Copy code
-git clone https://github.com/your-username/UNet-ResNet-CLIP-XRay-Classification.git
-Install Dependencies:
-Ensure all packages listed in the requirements.txt are installed.
-
-Run the Notebook:
-Open and execute the notebook to replicate the training and evaluation steps.
-
+Getting Started
+Clone the Repository
+Install Dependencies
+Run the Notebook
 Acknowledgments
-COVID-QU-Ex Dataset: For providing the high-quality dataset critical to this research.
-OpenAI CLIP Model, UNet, ResNet: For the pre-trained models that facilitated faster training and improved accuracy.
+License
+
+Overview
+This project leverages UNet, ResNet, and CLIP models to classify and segment lung X-ray images, specifically identifying COVID-19, Non-COVID, and Normal cases. This research aims to improve diagnostic accuracy in identifying lung infections using medical imaging.
+
+Objectives
+Classification: Accurately categorize lung X-rays into COVID-19, Non-COVID, and Normal classes.
+
+Segmentation: Identify and localize infected regions within COVID-19 X-ray images.
+
+Model Comparison: Evaluate performance across different model architectures for both classification and segmentation tasks.
+
+Methodology
+
+Data Preparation
+
+Dataset: Utilizes the COVID-QU-Ex dataset with original X-ray images, lung masks, and infection masks.
+
+Preprocessing: Images are resized, normalized, and augmented to improve model generalization.
+
+Data Organization: Dataframe structure includes paths to images, infection masks, and corresponding class labels.
+Model Architectures
+
+UNet: Employed for segmenting infected lung regions, trained to highlight specific infection areas.
+
+ResNet: Acts as a feature extractor, providing robust embeddings for classification.
+
+CLIP: Fine-tuned to classify images based on visual and textual labels (COVID-19, Non-COVID, Normal).
+Training Process
+
+Segmentation Training: UNet was trained on COVID-19 images with infection masks, reaching an Intersection over Union (IoU) of 0.8.
+
+Classification Training: ResNet and CLIP were fine-tuned for classification tasks, utilizing transfer learning for adaptation to X-ray data.
+Evaluation Metrics
+Accuracy, Precision, Recall: Used to assess classification performance.
+IoU (Intersection over Union): Key metric for evaluating segmentation accuracy.
+Results and Insights
+
+Segmentation: UNet successfully segmented infected areas in COVID-19 X-rays, achieving high IoU scores.
+
+Classification: ResNet and CLIP accurately classified images, with ResNet slightly outperforming due to better feature extraction.
+
+Model Comparison: Each model demonstrated strengths; UNet for segmentation and ResNet & CLIP for robust classification, suggesting that a hybrid approach may be optimal.
+Future Work
+
+Expanded Classification: Include more respiratory infection classes.
+
+Model Optimization: Adapt models for real-time diagnostic use.
+
+Weak Supervision: Explore using bounding boxes as a training aid without full segmentation labels.
+
+
+Getting Started
+Clone the Repository
+
+git clone https://github.com/your-username/UNet-ResNet-CLIP-XRay-Classification.git
+
+Install Dependencies
+
+Ensure all packages in requirements.txt are installed:
+
+
+pip install -r requirements.txt
+
+Run the Notebook
+Open unet-resnet-clip.ipynb in Jupyter Notebook or Jupyter Lab.
+Follow the steps in the notebook to replicate training and evaluation processes.
+Acknowledgments
+COVID-QU-Ex Dataset: For providing the dataset used in this research.
+OpenAI CLIP, UNet, and ResNet: For pre-trained models and architectures that facilitated this research.
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+
